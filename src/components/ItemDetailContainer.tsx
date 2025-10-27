@@ -5,6 +5,7 @@ import Loading from "./Loading";
 import { getProductById } from "../services/productService";
 import type { Product } from "../data/products";
 import { AlertCircle } from "lucide-react";
+import styles from "./ItemDetailContainer.module.css";
 
 const ItemDetailContainer: FC = () => {
   const [product, setProduct] = useState<Product | null>(null);
@@ -43,38 +44,11 @@ const ItemDetailContainer: FC = () => {
 
   if (!product) {
     return (
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          minHeight: "400px",
-          gap: "16px",
-          padding: "40px 20px",
-        }}
-      >
+      <div className={styles.errorContainer}>
         <AlertCircle size={64} color="#dc3545" />
-        <h2 style={{ fontSize: "24px", color: "#333", margin: 0 }}>
-          Producto no encontrado
-        </h2>
-        <p style={{ fontSize: "16px", color: "#666", margin: 0 }}>
-          El producto que buscas no existe o ha sido eliminado
-        </p>
-        <button
-          onClick={() => navigate("/")}
-          style={{
-            backgroundColor: "#007bff",
-            color: "#fff",
-            border: "none",
-            padding: "12px 24px",
-            borderRadius: "8px",
-            fontSize: "16px",
-            fontWeight: "600",
-            cursor: "pointer",
-            marginTop: "16px",
-          }}
-        >
+        <h2 className={styles.errorTitle}>Producto no encontrado</h2>
+        <p className={styles.errorText}>El producto que buscas no existe o ha sido eliminado</p>
+        <button onClick={() => navigate("/")} className={styles.errorButton}>
           Volver al catálogo
         </button>
       </div>

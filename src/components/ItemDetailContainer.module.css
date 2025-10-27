@@ -1,0 +1,33 @@
+.errorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 16px;
+  padding: 40px 20px;
+}
+
+.errorTitle {
+  font-size: 24px;
+  color: #333;
+  margin: 0;
+}
+
+.errorText {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+.errorButton {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 16px;
+}

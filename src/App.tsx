@@ -3,11 +3,12 @@ import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import NotFound from "./components/NotFound";
+import styles from "./App.module.css";
 
 function App() {
   return (
     <BrowserRouter>
-      <div style={{ minHeight: "100vh", backgroundColor: "#fafafa" }}>
+      <div className={styles.container}>
         <NavBar />
         <Routes>
           <Route path="/" element={<ItemListContainer />} />
